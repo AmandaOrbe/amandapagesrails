@@ -1,0 +1,28 @@
+
+<div>
+  <%=link_to "add a new article" , articles_new_path%></p>
+</div>
+     <div class="cards">
+      <div class="row">
+        <%@articles.each do |article|%>
+
+          <div class="col-xs-12 col-sm-6  col-md-4">
+            <div class="card article-card">
+
+                  <h3><%= link_to article.title, article.url %></h3>
+                  <h5><%= link_to article.headlines, article.url %></h5>
+
+
+                <p><span class="red">by</span> <%= article.author%></p>
+                <p class="gray narrow"><%= article.date%></p>
+                <div class="card-tags">
+
+
+
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
