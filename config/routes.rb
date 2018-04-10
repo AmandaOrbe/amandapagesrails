@@ -1,31 +1,50 @@
 Rails.application.routes.draw do
-  get 'pages/index'
+  # get 'pages/index'
 
-  get 'pages/show'
+  # get 'pages/show'
 
-  get 'pages/new'
+  # get 'pages/new'
 
-  get 'pages/create'
+  # get 'pages/create'
 
-  get 'pages/edit'
+  # get 'pages/edit'
 
-  get 'pages/update'
+  # get 'pages/update'
 
-  get 'pages/destroy'
+  # get 'pages/destroy'
 
-  get 'articles/index'
+  # get 'articles', to: "articles#index"
 
-  get 'articles/new'
+  # get 'articles/new', to: "articles#new"
 
-  get 'articles/create'
+  # post 'articles', to: "articles#create"
 
-  get 'articles/edit'
+  # get 'articles/:id/edit', to: "articles#edit" , as: :edit
 
-  get 'articles/update'
+  # patch 'articles/:id',  to: "articles#update"
 
-  get 'articles/destroy'
+
+resources :articles, only: [:index, :new, :create, :edit, :update ]
+
+delete 'articles/:id', to: "articles#destroy", as: :articles_delete
+
+
+
+resources :pages, only: [:index, :show, :new, :create, :edit, :update ]
+
+delete 'pages/:id', to: "pages#destroy", as: :pages_delete
+  # #READ
+  #   get 'restaurants', to: 'restaurants#index'
+  #   get 'restaurants/:id', to: 'restaurants#show', as: :restaurant
+  # #CREATE
+  #   get 'restaurants/new', to: 'restaurants#new'
+  #   post 'restaurants', to: 'restaurants#create'
+  # #UPDATE
+  #   get "restaurants/:id/edit", to: "restaurants#edit"
+  #   patch "restaurants/:id", to: "restaurants#update"
+  # #DELETE
+  #   delete "restaurants/:id", to: "restaurants#destroy"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :articles
-  resources :pages
+
 end

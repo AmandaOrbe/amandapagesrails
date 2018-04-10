@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 Article.destroy_all
+Page.destroy_all
 
-puts 'Creating restaurants...'
+puts 'Creating articles...'
 articles_attributes = [
   {
     title: "Good to great UI animation tips",
@@ -42,4 +43,32 @@ articles_attributes = [
 
 ]
 Article.create!(articles_attributes)
+
+puts 'Creating pages...'
+pages_attributes = [
+  {
+    title: "La Binchoise",
+    author: "diplostudio",
+    date: "06/03/2018",
+    headlines: "Nice product presentation and valorisation.",
+    url: "http://www.brasserielabinchoise.be/"
+
+  },
+  {
+  title: "LOUD srl",
+  author: "LOUD srl",
+  date: "19/06/2013",
+  headlines: "This is a guide to teach yourself design.",
+  url: "https://loudsrl.com/"
+  },
+  {
+    title: "Furniture shop",
+    author: "L.lei for NBSP",
+    date: "Mar 31, 2017",
+    headlines: "Creating Usability with Motion: The UX in Motion Manifesto",
+    url: "https://dribbble.com/shots/4419346-funiture-shopping-gif"
+  },
+
+]
+Page.create!(pages_attributes)
 puts 'Finished!'

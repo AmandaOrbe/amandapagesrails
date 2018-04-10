@@ -1,6 +1,6 @@
 
 <div>
-  <%=link_to "add a new article" , articles_new_path%></p>
+  <%=link_to "add a new article" ,  new_article_path%></p>
 </div>
      <div class="cards">
       <div class="row">
@@ -15,6 +15,8 @@
 
                 <p><span class="red">by</span> <%= article.author%></p>
                 <p class="gray narrow"><%= article.date%></p>
+                <%=link_to "update this article" , edit_article_path(article)%></p>
+                <%=link_to "delete" , articles_delete_path(article),  method: :delete,  data: { confirm: "Are you sure?" }%>
                 <div class="card-tags">
 
 
