@@ -46,5 +46,6 @@ delete 'pages/:id', to: "pages#destroy", as: :pages_delete
   #   delete "restaurants/:id", to: "restaurants#destroy"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  root to: "articles#index"
 end
+

@@ -1,6 +1,10 @@
 
 <div>
-  <%=link_to "add a new article" ,  new_article_path%></p>
+  <div class="add-button">
+    <%=link_to new_article_path do%></p>
+    <%= image_tag "plus_sign.png",  class: "plus-sign" %>
+    <% end %>
+  </div>
 </div>
      <div class="cards">
       <div class="row">
@@ -8,15 +12,20 @@
 
           <div class="col-xs-12 col-sm-6  col-md-4">
             <div class="card article-card">
+              <div class="article-img-frame">
+                <%= image_tag "ux-animations1.png",  class: "image-card" %>
+              </div>
 
-                  <h3><%= link_to article.title, article.url %></h3>
+                  <h4><%= link_to article.title, article.url %></h4>
                   <h5><%= link_to article.headlines, article.url %></h5>
 
 
                 <p><span class="red">by</span> <%= article.author%></p>
                 <p class="gray narrow"><%= article.date%></p>
-                <%=link_to "update this article" , edit_article_path(article)%></p>
-                <%=link_to "delete" , articles_delete_path(article),  method: :delete,  data: { confirm: "Are you sure?" }%>
+                <%=link_to articles_delete_path(article),  method: :delete,  data: { confirm: "Are you sure?" } do%>
+                  <i class="fa fa-trash-o"></i>
+
+                <% end %>
                 <div class="card-tags">
 
 
