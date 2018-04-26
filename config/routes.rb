@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'references/articles'
+
+  get 'references/pages'
+
+  get 'references/ressources'
+
+  # get 'references/new'
+
+  # get 'references/create'
+
+  # get 'references/edit'
+
+  # get 'references/update'
+
+  # get 'references/destroy'
+
   # get 'pages/index'
 
   # get 'pages/show'
@@ -25,6 +41,7 @@ Rails.application.routes.draw do
 
 
 resources :articles, only: [:index, :new,  :create, :edit, :update ]
+resources :references, only: [:index, :new,  :create, :edit, :update ]
 
 delete 'articles/:id', to: "articles#destroy", as: :articles_delete
 
