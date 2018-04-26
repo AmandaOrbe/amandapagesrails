@@ -23,7 +23,7 @@ class ReferencesController < ApplicationController
   def create
       @reference = Reference.new(reference_params)
     if @reference.save
-      redirect_to references_articles_path
+      redirect(@reference)
     else
       render :new
     end
@@ -34,15 +34,17 @@ class ReferencesController < ApplicationController
 
   def update
       if @reference.update(reference_params)
-      redirect_to references_path(@reference)
+      redirect(@reference)
     else
       render :edit
     end
   end
 
   def destroy
-      @reference.destroy
-    redirect_to references_path
+    category = @reference.category
+    path = "#{category}s_path"
+    @reference.destroy
+    redirect_to send(path)
   end
 end
 
@@ -50,11 +52,20 @@ end
 private
 
   def reference_params
-    params.require(:reference).permit(:title, :date, :headlines, :author, :url)
+    params.require(:reference).permit(:title, :category, :url)
   end
 
   def set_reference
     @reference = Reference.find(params[:id])
 
   end
+
+  def redirect(reference)
+    category = @reference.category
+    path = "#{category}s_path"
+    redirect_to send(path)
+
+  end
+
+
 
