@@ -6,24 +6,8 @@
   background-color:white;
   justify-content: space-around;
   align-items: center;
-  a{
-    width: 90px;
-    font-size: 20px;
-    font-weight: 500;
-    font-family: 'Josefin Sans';
-    color:black;
-    transition-timing-function: linear;
-    -webkit-transition: font-size 800ms;
-    transition: font-size 800ms;
-  }
-
-  a.active{
-    font-size: 36px;
-    text-decoration: none;
-  }
-
   a:hover{
-    text-decoration: none !important;
+    opacity: 1;
   }
 }
 
@@ -35,7 +19,9 @@
 
 }
 
-
+.red{
+  color: $red;
+}
 
 .underline{
   height: 5px;

@@ -1,11 +1,4 @@
-
-<div>
-  <div class="add-button">
-    <%=link_to new_article_path do%></p>
-    <%= image_tag "plus_sign.png",  class: "plus-sign" %>
-    <% end %>
-  </div>
-</div>
+<%= render partial: 'form', locals: {path: {controller: "articles", action: "create"}} %>
      <div class="cards">
       <div class="row">
         <%@articles.each do |article|%>

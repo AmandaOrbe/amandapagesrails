@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # patch 'articles/:id',  to: "articles#update"
 
 
-resources :articles, only: [:index, :new, :create, :edit, :update ]
+resources :articles, only: [:index, :new,  :create, :edit, :update ]
 
 delete 'articles/:id', to: "articles#destroy", as: :articles_delete
 
