@@ -1,4 +1,7 @@
 class ReferencesController < ApplicationController
+  require 'open-uri'
+  require 'nokogiri'
+  require 'open_graph_reader'
   before_action :set_reference, only: [:edit, :update, :destroy]
 
   def articles
@@ -22,6 +25,19 @@ class ReferencesController < ApplicationController
 
   def create
       @reference = Reference.new(reference_params)
+      url = @reference.url
+      html_file = open(url).read
+      @og = OpenGraphReader.fetch("http://examples.opengraphprotocol.us/article.html")
+      if @og
+        object = OpenGraphReader.parse!(html_file)
+        @reference.title = object.og.title
+        @reference.image = object.og.image.url
+        @reference.description = object.og.description
+      else
+        html_doc = Nokogiri::HTML(html_file)
+        @reference.title = html_doc.search('title').text.strip
+        @reference.description = html_doc.search('p').text.strip
+      end
     if @reference.save
       redirect(@reference)
     else
@@ -52,7 +68,7 @@ end
 private
 
   def reference_params
-    params.require(:reference).permit(:title, :category, :url)
+    params.require(:reference).permit(:notes, :category, :url)
   end
 
   def set_reference

@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 
 
+  get 'pages/home'
+  get 'pages/parsing'
+
   get 'articles', to: "references#articles"
   get 'pages', to: "references#pages"
   get 'ressources', to: "references#ressources"

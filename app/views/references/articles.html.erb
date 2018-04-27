@@ -4,7 +4,11 @@
     <div class="col-xs-12 col-sm-6  col-md-4">
       <div class="card article-card">
         <div class="article-img-frame">
-          <%= image_tag "ux-animations1.png",  class: "image-card" %>
+          <% if article.image %>
+            <%= image_tag article.image,  class: "image-card" %>
+          <% else %>
+            <%= image_tag "ux-animations1.png",  class: "image-card" %>
+          <% end %>
         </div>
         <h4><%= link_to article.title, article.url %></h4>
         <h5><%= link_to article.description, article.url %></h5>
