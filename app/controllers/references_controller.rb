@@ -27,17 +27,19 @@ class ReferencesController < ApplicationController
       @reference = Reference.new(reference_params)
       url = @reference.url
       html_file = open(url).read
-      @og = OpenGraphReader.fetch("http://examples.opengraphprotocol.us/article.html")
-      if @og
-        object = OpenGraphReader.parse!(html_file)
-        @reference.title = object.og.title
-        @reference.image = object.og.image.url
-        @reference.description = object.og.description
-      else
+      @og = OpenGraphReader.fetch(url)
+
         html_doc = Nokogiri::HTML(html_file)
         @reference.title = html_doc.search('title').text.strip
         @reference.description = html_doc.search('p').text.strip
-      end
+        @reference.image = html_doc.css("meta[property='og:image']").first.attributes["content"]
+        if @reference.image = nil
+          @reference.image = "ux-animations1.png"
+        end
+-
+    # self.photo = URI.parse(photo_url)
+    # self.sav
+
     if @reference.save
       redirect(@reference)
     else

@@ -10,4 +10,6 @@
 console.log('Hello World from Webpacker')
 import 'bootstrap';
 import { underlineCurrent } from '../components/navbar';
+import { trimText } from '../components/cards';
 underlineCurrent();
+trimText();
