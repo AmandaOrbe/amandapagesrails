@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'articles', to: "references#articles"
   get 'pages', to: "references#pages"
-  get 'ressources', to: "references#ressources"
+  get 'tools', to: "references#tools"
 
 
 

@@ -1,7 +1,8 @@
 .modal-content{
-    height: 690px;
-    width: 500px;
-    border-radius: 8px;
+  height: 650px;
+  width: 500px;
+  border-radius: 8px;
+  font-weight: 100;
 }
 
 .modal-title{
@@ -10,14 +11,14 @@
 .modal-header{
  padding: 15px;
  border-bottom: none;
-  text-align: center;
-      margin-top: 30px;
+ text-align: center;
+ margin-top: 30px;
 }
 
 .modal-body{
  padding: 15px;
  border-bottom: none;
-text-align: center;
+ text-align: center;
 
 }
 
@@ -26,40 +27,135 @@ text-align: center;
   border-top: none;
 }
 
-.form-control{
-  width: 400px;
-  height: 40px;
-  border-color: #848484;
-  margin: 0 auto;
-
-}
 
 .modal-container{
-  width: 400px;
+  width: 444px;
   margin:0 auto;
 
 }
-
+// .modal-open .modal {
+//   overflow-x: hidden;
+//   overflow-y: hidden;
+// }
 .form-group{
   abbr{
     display: none;
   }
 }
-
-.control-label{
-  font-size: 12px;
-  font-weight: 400;
-  color: black;
-}
-
 .close{
   opacity: 1;
 }
 
+
+// text inputs
+
+.form-label{
+  font-size: 14px;
+  font-weight: 300;
+  color: black;
+}
+
+.form-input{
+  width: 371px;
+  border: 1px solid rgba(0,0,0,0.48);
+  border-radius: 6px;
+  color: rgba(0,0,0,0.47);
+  font-family: "Josefin Sans";
+  font-size: 12px;
+  line-height: 14px;
+   padding: 8px;
+}
+
+.url{
+  height: 40px;
+}
+
+.notes{
+  height: 80px;
+
+}
+
+.input{
+  text-align: left;
+  margin: 22px;
+}
+
+// category buttons
 .radio-buttons{
   display: flex;
 }
 
-.radio-button{
-  height: 104px;  width: 104px; border-radius: 8px; background-color: #FFFFFF;  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+.category-frame{
+  height: 104px;
+  width: 104px;
+  padding-top: 11px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  text-align: center;
+  color: black;
+
+  margin: 22px;
 }
+.category-icon{
+  content: "\f007";
+  font-family: 'Font Awesome\ 5 Free';
+  font-size: 24px;
+  text-align: center;
+
+}
+.category-label{
+  font-size: 12px;
+  margin-top: 5px;
+}
+label{
+  font-weight: 100;
+}
+
+.category-buttons{
+  display: flex;
+}
+.radio_button:checked{
+
+}
+
+
+.selected{
+  border: 1px solid $red;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  color: $red;
+  input[type='radio']:after {
+    width: 16px;
+    height: 16px;
+    border-radius: 15px;
+    left: -1px;
+    position: relative;
+    background-color: $red;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid $red;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

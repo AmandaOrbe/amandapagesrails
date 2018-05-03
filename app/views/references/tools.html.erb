@@ -6,7 +6,7 @@
 
 <div class="cards">
   <div class="row">
-    <%@ressources.each do |ressource|%>
+    <%@tools.each do |tool|%>
 
     <div class="col-xs-12 col-sm-6  col-md-4">
       <div class="card square puntodeapoyo">
@@ -14,14 +14,14 @@
 
 
         <div class="card-title">
-          <h3><%=link_to ressource.url ,  ressource.url%></h3>
+          <h3><%=link_to tool.url ,  tool.url%></h3>
         </div>
-        <%=link_to edit_reference_path(ressource)do%>
+        <%=link_to edit_reference_path(tool)do%>
         <i class="fa fa-facebook"></i>
         <% end %>
 
         <div class="card-footer">
-          <%=link_to references_delete_path(ressource),  method: :delete,  data: { confirm: "Are you sure?" } do%>
+          <%=link_to references_delete_path(tool),  method: :delete,  data: { confirm: "Are you sure?" } do%>
           <i class="fa fa-trash-o"></i>
 
           <% end %>

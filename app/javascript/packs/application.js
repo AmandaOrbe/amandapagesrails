@@ -11,5 +11,9 @@ console.log('Hello World from Webpacker')
 import 'bootstrap';
 import { underlineCurrent } from '../components/navbar';
 import { trimText } from '../components/cards';
+import { clickCard } from '../components/form';
+import { checkRadio } from '../components/form';
 underlineCurrent();
 trimText();
+clickCard();
+

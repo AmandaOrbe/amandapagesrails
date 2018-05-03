@@ -222,7 +222,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   faraday-cookie_jar
   faraday_middleware
-  font-awesome-sass
+  font-awesome-sass (~> 4.7)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   nokogiri (~> 1.8, >= 1.8.2)

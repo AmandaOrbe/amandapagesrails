@@ -1,8 +1,10 @@
 function trimText(){
   document.querySelectorAll(".article-description").forEach((description)=>{
-   console.log(description);
-    const shortText = description.innerText.split(/\s+/).slice(0,15).join(" ") + "...";
-    description.innerText = shortText;
+    const fullText = description.innerText.split(/\s+/)
+    const shortText = description.innerText.split(/\s+/).slice(0,19).join(" ") + "...";
+    if (fullText.length > 20){
+      description.innerText = shortText;
+    }
   })
   console.log("hello from cards")
 
